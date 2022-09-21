@@ -1,0 +1,18 @@
+.card{
+  margin: 20px;
+  background-color: #2a454b;
+  p,h2{
+    color: #ff6d00;
+    font-weight: bold;
+    font-size: 22px;
+    span{
+      color: #ffffff;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+}
+

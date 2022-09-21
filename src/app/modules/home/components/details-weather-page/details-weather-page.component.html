@@ -1,0 +1,35 @@
+<div class="container" *ngIf="objectWeather">
+  <div class="card text-white">
+    <div class="card-header text-center">
+      <h2 class="animate__animated animate__flash animate__infinite	infinite">
+        {{ objectWeather.name }}, {{ objectWeather.sys.country }}
+
+      </h2>
+    </div>
+    <div class="card-body text-center">
+      <img class="animate__animated animate__flash animate__infinite	infinite" src="https://openweathermap.org/img/wn/{{objectWeather.weather[0].icon}}@2x.png" height="50px" alt="">
+      <p class="card-text">
+        Grados:
+        <span>{{ objectWeather.main.feels_like - 273 | number }}°C</span>
+      </p>
+      <p class="card-text">
+        Temperatura: <span>{{ objectWeather.main.temp - 273 | number }}</span>
+      </p>
+      <p class="card-text">
+        Vientos: <span>{{ objectWeather.wind.speed }}m/s</span>
+      </p>
+      <p class="card-text">
+        Humedad: <span>{{ objectWeather.main.humidity }}</span>
+      </p>
+      <p class="card-text">
+        Latitud: <span>{{ objectWeather.coord.lat }} </span>
+      </p>
+      <p class="card-text">
+        Longitud:<span> {{ objectWeather.coord.lon }} </span>
+      </p>
+      <p class="card-text">
+        Descripcion: <span>{{ objectWeather.weather[0].description }}</span>
+      </p>
+    </div>
+  </div>
+</div>
