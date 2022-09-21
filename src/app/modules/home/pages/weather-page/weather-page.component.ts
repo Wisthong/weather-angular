@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component } from '@angular/core';
 import { Weather } from '@modules/home/models/weather';
 import { WeatherService } from '@modules/home/service/weather.service';
@@ -10,14 +11,20 @@ import { WeatherService } from '@modules/home/service/weather.service';
 export class WeatherPageComponent {
   objectWeather!: Weather;
   constructor(
-    private readonly weatherSvc:WeatherService,) {}
+    private readonly weatherSvc: WeatherService,
+    private toastr: ToastrService
+  ) {}
 
   onSearchWeatherCity(city: string) {
-    this.weatherSvc.searchWeatherCity(city).subscribe((resOk=>{
-      this.objectWeather = resOk;
-      console.log(this.objectWeather);
-    }),(resFail=>{
-
-    }))
+    this.weatherSvc.searchWeatherCity(city).subscribe(
+      (resOk) => {
+        this.objectWeather = resOk;
+        this.toastr.success('👍', '👍');
+        // console.log(this.objectWeather);
+      },
+      (resFail) => {
+        this.toastr.error('No se encontro la ciudad', 'Error');
+      }
+    );
   }
 }
