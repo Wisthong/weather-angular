@@ -28,7 +28,7 @@
         Longitud:<span> {{ objectWeather.coord.lon }} </span>
       </p>
       <p class="card-text">
-        Descripcion: <span>{{ objectWeather.weather[0].description }}</span>
+        Descripcion: <span>{{ objectWeather.weather[0].description | titlecase}}</span>
       </p>
     </div>
   </div>

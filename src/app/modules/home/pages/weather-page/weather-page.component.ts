@@ -19,8 +19,7 @@ export class WeatherPageComponent {
     this.weatherSvc.searchWeatherCity(city).subscribe(
       (resOk) => {
         this.objectWeather = resOk;
-        this.toastr.success('👍', '👍');
-        // console.log(this.objectWeather);
+        this.toastr.success('Se encontro la ciudad', '!Exito¡');
       },
       (resFail) => {
         this.toastr.error('No se encontro la ciudad', 'Error');

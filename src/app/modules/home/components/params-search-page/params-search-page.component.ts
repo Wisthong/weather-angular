@@ -18,6 +18,9 @@ export class ParamsSearchPageComponent {
     if (this.weatherForm.valid) {
       const city = this.weatherForm.getRawValue().city;
       this.cityEvent.emit(city);
+      this.weatherForm.patchValue({
+        city: '',
+      });
     }
   }
 }
